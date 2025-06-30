@@ -19,6 +19,13 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${geist.variable}`}>
+      <head>
+        <title>ur mom</title>
+        <link
+          rel="icon"
+          href="https://cdn.sanriowiki.com/2/23/Cinnamoroll.png"
+        ></link>
+      </head>
       <body>{children}</body>
     </html>
   );

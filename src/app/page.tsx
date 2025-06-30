@@ -1,12 +1,11 @@
 "use client";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
 export default function HomePage() {
   const [number, setNumber] = useState(0);
   const [numberColor, setNumberColor] = useState("text-blue-500");
-  const [numberSize, setNumberSize] = useState("text-1xl");
+  //const [numberSize, setNumberSize] = useState("text-1xl");
 
   const colors = [
     "text-red-500",
@@ -21,38 +20,38 @@ export default function HomePage() {
     "text-cyan-500",
   ];
 
-  const text_sizes = [
-    "text-1xl",
-    "text-2xl",
-    "text-3xl",
-    "text-4xl",
-    "text-5xl",
-    "text-6xl",
-    "text-7xl",
-    "text-8xl",
-    "text-9xl",
-  ];
+  // const text_sizes = [
+  //   "text-1xl",
+  //   "text-2xl",
+  //   "text-3xl",
+  //   "text-4xl",
+  //   "text-5xl",
+  //   "text-6xl",
+  //   "text-7xl",
+  //   "text-8xl",
+  //   "text-9xl",
+  // ];
 
   function getRandomColor(): string {
     const randomIndex = Math.floor(Math.random() * colors.length);
-    return colors[randomIndex] || "text-blue-500"; // makes sure it returns something.
+    return colors[randomIndex] ?? "text-blue-500"; // makes sure it returns something.
   }
 
-  function getRandomSize(): string {
-    const randomColour = Math.floor(Math.random() * text_sizes.length);
-    return text_sizes[randomColour] || "text-1xl";
-  }
+  // function getRandomSize(): string {
+  //   const randomColour = Math.floor(Math.random() * text_sizes.length);
+  //   return text_sizes[randomColour] || "text-1xl";
+  // }
 
   function increaseNumber() {
     setNumber(number + 1);
     setNumberColor(getRandomColor());
-    setNumberSize(getRandomSize());
+    //setNumberSize(getRandomSize());
   }
 
   function decreaseNumber() {
     setNumber(number - 1);
     setNumberColor(getRandomColor());
-    setNumberSize(getRandomSize());
+    //setNumberSize(getRandomSize());
   }
 
   function randomNumberChange() {
@@ -61,7 +60,7 @@ export default function HomePage() {
   return (
     <div>
       <div className="flex h-screen flex-col items-center justify-center text-9xl font-bold">
-        <p className={`block ${numberColor} ${numberSize} mb-10 animate-spin`}>
+        <p className={`block ${numberColor} mb-10 animate-spin text-5xl`}>
           {number}
         </p>
         <div className="flex gap-4">
