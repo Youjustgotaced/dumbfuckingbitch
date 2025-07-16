@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 
 export default function HomePage() {
   const [number, setNumber] = useState(0);
@@ -59,7 +60,17 @@ export default function HomePage() {
   }
   return (
     <div>
-      <div className="flex h-screen flex-col items-center justify-center text-9xl font-bold">
+      <div className="flex justify-center p-4">
+        {number == 69 && (
+          <Alert className="w-1/3">
+            <AlertTitle className="">Sup?</AlertTitle>
+            <AlertDescription>
+              Did you know you have just rolled a funny number?
+            </AlertDescription>
+          </Alert>
+        )}
+      </div>
+      <div className="flex flex-col items-center justify-center text-9xl font-bold">
         <p className={`block ${numberColor} mb-10 animate-spin text-5xl`}>
           {number}
         </p>
